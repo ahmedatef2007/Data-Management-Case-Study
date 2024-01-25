@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@mainDesgin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="universitydm.MainController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <BorderPane prefHeight="630.0" prefWidth="910.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <top>
+                        <AnchorPane prefHeight="53.0" prefWidth="928.0" styleClass="top-form" BorderPane.alignment="CENTER">
+                            <children>
+                                <ImageView blendMode="DARKEN" fitHeight="40.0" fitWidth="69.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="file:/H:/iTi/Java2/Projects/UniversityDM/images/uni.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="92.0" layoutY="13.0" styleClass="shadow" text="University Management System">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="logout_btn" layoutX="832.0" layoutY="11.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="80.0" text="Logout">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="logout" />
+                                        <String fx:value="shadow" />
+                                    </styleClass>
+                                </Button>
+                        <Button fx:id="refrsh_btn1" layoutX="735.0" layoutY="11.0" mnemonicParsing="false" onAction="#refreshData" prefHeight="30.0" prefWidth="80.0" text="Refresh">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="logout" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </Button>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <left>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane layoutX="-7.0" layoutY="93.0" prefHeight="634.0" prefWidth="202.0" styleClass="nav-form" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Button fx:id="home_btn" layoutX="13.0" layoutY="151.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="180.0" text="Home">
+                                            <styleClass>
+                                                <String fx:value="nav-btn" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                        </Button>
+                                        <Button fx:id="courses_btn" layoutX="13.0" layoutY="272.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="180.0" text="Courses">
+                                            <styleClass>
+                                                <String fx:value="nav-btn" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                        </Button>
+                                        <Button fx:id="departments_btn" layoutX="14.0" layoutY="447.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="180.0" text="Departments">
+                                            <styleClass>
+                                                <String fx:value="nav-btn" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                        </Button>
+                                        <Button fx:id="grades_btn" layoutX="14.0" layoutY="391.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="180.0" text="Grades">
+                                            <styleClass>
+                                                <String fx:value="nav-btn" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                        </Button>
+                                        <Button fx:id="student_btn" layoutX="13.0" layoutY="213.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="180.0" text="Students">
+                                            <styleClass>
+                                                <String fx:value="nav-btn" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                        </Button>
+                                        <Button fx:id="assignCourses_btn" layoutX="14.0" layoutY="333.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="180.0" text="Assign Courses">
+                                            <styleClass>
+                                                <String fx:value="nav-btn" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                        </Button>
+                              <ImageView fitHeight="120.0" fitWidth="151.0" layoutX="46.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/admin.png" />
+                                 </image>
+                              </ImageView>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </left>
+                    <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane fx:id="home_form" layoutX="14.0" layoutY="14.0" prefHeight="616.0" prefWidth="701.0">
+                                    <styleClass>
+                                        <String fx:value="white-bg" />
+                                        <String fx:value="shadow" />
+                                    </styleClass>
+                                    <children>
+                                        <AnchorPane prefHeight="125.0" prefWidth="701.0">
+                                            <children>
+                                                <AnchorPane layoutX="251.0" layoutY="14.0" prefHeight="80.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="62.0" layoutY="49.0" text="Courses" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="Arial Nova" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="coursesNum_label" layoutX="95.0" layoutY="14.0" text="0" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="Arial Nova" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                          <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="6.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="file:/H:/iTi/Java2/Projects/UniversityDM/images/courses-icon.png" />
+                                             </image>
+                                          </ImageView>
+                                                    </children>
+                                                    <styleClass>
+                                                        <String fx:value="nav-form" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="21.0" layoutY="14.0" prefHeight="80.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="61.0" layoutY="49.0" text="Students" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="Arial Nova" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="studentNum_label" layoutX="95.0" layoutY="14.0" text="0" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="Arial Nova" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                          <ImageView fitHeight="54.0" fitWidth="40.0" layoutX="8.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="file:/H:/iTi/Java2/Projects/UniversityDM/images/student-icon.png" />
+                                             </image>
+                                          </ImageView>
+                                                    </children>
+                                                    <styleClass>
+                                                        <String fx:value="nav-form" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="482.0" layoutY="14.0" prefHeight="80.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="43.0" layoutY="49.0" text="Departments" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="Arial Nova" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="departmentsNum_label" layoutX="95.0" layoutY="14.0" text="0" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="Arial Nova" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                          <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="5.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="file:/H:/iTi/Java2/Projects/UniversityDM/images/departments-icon.png" />
+                                             </image>
+                                          </ImageView>
+                                                    </children>
+                                                    <styleClass>
+                                                        <String fx:value="nav-form" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </AnchorPane>
+                                            </children>
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                        </AnchorPane>
+                                        <AnchorPane layoutX="14.0" layoutY="138.0" prefHeight="200.0" prefWidth="310.0">
+                                            <styleClass>
+                                                <String fx:value="shadow" />
+                                                <String fx:value="white-bg" />
+                                            </styleClass>
+                                            <children>
+                                                <BarChart fx:id="studentAgeAVG_chart" alternativeRowFillVisible="false" layoutY="1.0" prefHeight="200.0" prefWidth="310.0" title="Average Age of Students">
+                                                    <xAxis>
+                                                        <CategoryAxis side="BOTTOM" />
+                                                    </xAxis>
+                                                    <yAxis>
+                                                        <NumberAxis side="LEFT" />
+                                                    </yAxis>
+                                                </BarChart>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane layoutX="367.0" layoutY="138.0" prefHeight="203.0" prefWidth="283.0">
+                                            <styleClass>
+                                                <String fx:value="shadow" />
+                                                <String fx:value="white-bg" />
+                                            </styleClass>
+                                            <children>
+                                                <BarChart fx:id="departmentGradeAvg_chart" layoutY="1.0" prefHeight="200.0" prefWidth="310.0" title="Average Grade Per Department">
+                                                    <xAxis>
+                                                        <CategoryAxis side="BOTTOM" />
+                                                    </xAxis>
+                                                    <yAxis>
+                                                        <NumberAxis side="LEFT" />
+                                                    </yAxis>
+                                                </BarChart>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane layoutX="14.0" layoutY="355.0" prefHeight="203.0" prefWidth="670.0">
+                                            <styleClass>
+                                                <String fx:value="shadow" />
+                                                <String fx:value="white-bg" />
+                                            </styleClass>
+                                            <children>
+                                                <BarChart fx:id="courseGradeAvg_chart" layoutX="22.0" legendVisible="false" maxHeight="254.0" prefHeight="254.0" prefWidth="646.0" title="Average GradePer Course">
+                                                    <xAxis>
+                                                        <CategoryAxis prefHeight="48.0" prefWidth="591.0" />
+                                                    </xAxis>
+                                                    <yAxis>
+                                                        <NumberAxis prefHeight="197.0" prefWidth="25.0" />
+                                                    </yAxis>
+                                                </BarChart>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="students_form" prefHeight="624.0" prefWidth="728.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="593.0" prefWidth="696.0">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <Label layoutX="30.0" layoutY="300.0" text="Student ID :" />
+                                                <TextField fx:id="students_id_tf" disable="true" editable="false" layoutX="108.0" layoutY="295.0" prefHeight="30.0" prefWidth="150.0" />
+                                                <Label layoutX="30.0" layoutY="346.0" text="First Name :" />
+                                                <TextField fx:id="students_fname_tf" layoutX="108.0" layoutY="338.0" prefHeight="30.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="student_gender_cbox" layoutX="325.0" layoutY="340.0" prefHeight="30.0" prefWidth="150.0" />
+                                                <Label layoutX="270.0" layoutY="344.0" text="Gender : " />
+                                                <Label layoutX="30.0" layoutY="391.0" text="Last Name :" />
+                                                <TextField fx:id="students_lname_tf" layoutX="108.0" layoutY="385.0" prefHeight="30.0" prefWidth="150.0" />
+                                                <DatePicker fx:id="student_dob_dp" layoutX="324.0" layoutY="387.0" prefHeight="30.0" prefWidth="150.0" />
+                                                <Label layoutX="272.0" layoutY="299.0" text="Email : " />
+                                                <TextField fx:id="students_email_tf" layoutX="325.0" layoutY="297.0" prefHeight="30.0" prefWidth="150.0" />
+                                                <Label layoutX="275.0" layoutY="391.0" text="DOB :" />
+                                                <Button fx:id="addStudent_btn" layoutX="521.0" layoutY="337.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="30.0" prefWidth="150.0" text="ADD">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <Button fx:id="updateStudent_btn" layoutX="522.0" layoutY="384.0" mnemonicParsing="false" onAction="#updateStudent" prefHeight="30.0" prefWidth="150.0" text="UPDATE">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <Button fx:id="clearStudent_btn" layoutX="521.0" layoutY="427.0" mnemonicParsing="false" onAction="#clearStudentSelection" prefHeight="31.0" prefWidth="151.0" text="CLEAR">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <AnchorPane layoutX="30.0" layoutY="433.0" prefHeight="132.0" prefWidth="460.0">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <TableView fx:id="student_courseGrade_tableview" layoutX="199.0" layoutY="8.0" prefHeight="120.0" prefWidth="251.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="student_courseGrade_tableview_course" prefWidth="161.0" text="Course" />
+                                                                <TableColumn fx:id="student_courseGrade_tableview_grade" minWidth="0.0" prefWidth="88.0" text="Grade" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="40.0" layoutY="442.0" prefHeight="53.0" prefWidth="169.0">
+                                                    <children>
+                                                        <Label layoutX="14.0" layoutY="14.0" text="GPA :">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="gpa_label" layoutX="82.0" layoutY="14.0">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="40.0" layoutY="508.0" prefHeight="53.0" prefWidth="169.0">
+                                                    <children>
+                                                        <Label layoutX="14.0" layoutY="14.0" text="Level :">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="level_label" layoutX="82.0" layoutY="14.0">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                                <Label layoutX="485.0" layoutY="299.0" text="Dep :" />
+                                                <TextField fx:id="students_depID_tf" layoutX="522.0" layoutY="297.0" prefHeight="30.0" prefWidth="150.0" />
+                                                <Button fx:id="Refresh_btn" layoutX="522.0" layoutY="476.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="151.0" text="REFRESH">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane layoutX="24.0" layoutY="24.0" prefHeight="268.0" prefWidth="676.0">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <TextField fx:id="studentSearch_tf" layoutX="24.0" layoutY="7.0" prefHeight="30.0" promptText="Search" styleClass="search" />
+                                                <TableView fx:id="students_tableview" layoutX="14.0" layoutY="44.0" onMouseClicked="#selectStudent" prefHeight="200.0" prefWidth="648.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="students_tableview_id" prefWidth="41.0" text="ID" />
+                                                        <TableColumn fx:id="students_tableview_fname" prefWidth="82.0" text="First Name" />
+                                                        <TableColumn fx:id="students_tableview_lname" text="Last Name" />
+                                                        <TableColumn fx:id="students_tableview_email" prefWidth="145.0" text="Email" />
+                                                        <TableColumn fx:id="students_tableview_gender" prefWidth="74.0" text="Gender" />
+                                                        <TableColumn fx:id="students_tableview_dob" prefWidth="92.0" text="Date Of Birth" />
+                                                        <TableColumn fx:id="students_tableview_depId" prefWidth="133.0" text="Department" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="courses_form" layoutX="178.0" layoutY="203.0" prefHeight="624.0" prefWidth="728.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="591.0" prefWidth="276.0" styleClass="white-bg">
+                                            <children>
+                                                <TextField fx:id="courses_id_tf" disable="true" layoutX="103.0" layoutY="48.0" prefHeight="30.0" prefWidth="159.0" />
+                                                <Label layoutX="20.0" layoutY="47.0" text="ID : ">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="courses_name_tf" layoutX="103.0" layoutY="85.0" prefHeight="30.0" prefWidth="159.0" />
+                                                <Label layoutX="19.0" layoutY="84.0" text="Name :">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="23.0" layoutY="205.0" text="# Hours :">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <ComboBox fx:id="courses_numHours_cbox" layoutX="112.0" layoutY="206.0" prefHeight="30.0" prefWidth="150.0" />
+                                                <TextField fx:id="courses_depId_tf" layoutX="102.0" layoutY="166.0" prefHeight="30.0" prefWidth="159.0" />
+                                                <Label layoutX="18.0" layoutY="165.0" text="Dep : ">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="courseAdd_btn" layoutX="21.0" layoutY="296.0" mnemonicParsing="false" onAction="#addCourse" prefHeight="31.0" prefWidth="244.0" text="ADD">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <Button fx:id="courseUpdate_btn" layoutX="20.0" layoutY="345.0" mnemonicParsing="false" onAction="#updateCourse" prefHeight="31.0" prefWidth="244.0" text="UPDATE">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <Button fx:id="courseClear_btn" layoutX="22.0" layoutY="434.0" mnemonicParsing="false" onAction="#clearCourseSelection" prefHeight="31.0" prefWidth="244.0" text="CLEAR">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <Button fx:id="courseDelete_btn" layoutX="22.0" layoutY="388.0" mnemonicParsing="false" onAction="#deleteCourse" prefHeight="31.0" prefWidth="244.0" text="DELETE">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <TextField fx:id="courses_code_tf" layoutX="103.0" layoutY="123.0" prefHeight="30.0" prefWidth="159.0" />
+                                                <Label layoutX="19.0" layoutY="122.0" text="Code :">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane layoutX="294.0" layoutY="14.0" prefHeight="591.0" prefWidth="415.0" styleClass="white-bg">
+                                            <children>
+                                                <TableView fx:id="courses_tableview" layoutX="8.0" layoutY="21.0" onMouseClicked="#selectCourse" prefHeight="324.0" prefWidth="398.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="courses_tableview_id" prefWidth="43.0" text="ID" />
+                                                        <TableColumn fx:id="courses_tableview_code" prefWidth="56.0" text="Code" />
+                                                        <TableColumn fx:id="courses_tableview_name" prefWidth="150.0" text="Name" />
+                                                        <TableColumn fx:id="courses_tableview_numHours" minWidth="0.0" prefWidth="62.0" text="# Hours" />
+                                                        <TableColumn fx:id="courses_tableview_depId" minWidth="0.0" prefWidth="82.0" text="Department" />
+                                                    </columns>
+                                                </TableView>
+                                                <TableView fx:id="courses_enrolledStudents_tableview" layoutX="10.0" layoutY="352.0" prefHeight="224.0" prefWidth="397.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="courses_enrolledStudents_tableview_sid" prefWidth="116.0" text="Student ID" />
+                                                        <TableColumn fx:id="courses_enrolledStudents_tableview_semail" prefWidth="277.0" text="Student Email" />
+                                                    </columns>
+                                                </TableView>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="grades_form" layoutX="55.0" layoutY="106.0" prefHeight="624.0" prefWidth="728.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane layoutX="22.0" layoutY="304.0" prefHeight="293.0" prefWidth="691.0">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <TextField fx:id="studentGrade_studentId_tf" layoutX="118.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" />
+                                                <Label layoutX="19.0" layoutY="14.0" text="Student ID : ">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="studentGrade_courseId_tf" layoutX="118.0" layoutY="53.0" prefHeight="25.0" prefWidth="120.0" />
+                                                <Label layoutX="19.0" layoutY="52.0" text="Course ID : ">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="studentGrade_grade_tf" layoutX="85.0" layoutY="93.0" prefHeight="25.0" prefWidth="156.0" />
+                                                <Label layoutX="19.0" layoutY="92.0" text="Grade :">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <TableView fx:id="studentCourses_tableview" layoutX="255.0" layoutY="8.0" onMouseClicked="#addGradeSelect" prefHeight="266.0" prefWidth="422.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="studentCourses_studentID" prefWidth="66.0" text="Student ID" />
+                                                        <TableColumn fx:id="studentCourses_studentName" prefWidth="118.0" text="Student Name" />
+                                                        <TableColumn fx:id="studentCourses_CourseID" prefWidth="63.0" text="Course ID" />
+                                                        <TableColumn fx:id="studentCourses_courseName" prefWidth="169.0" text="Course Name" />
+                                                    </columns>
+                                                </TableView>
+                                                <TextField fx:id="studentCourses_search" layoutX="14.0" layoutY="128.0" prefHeight="30.0" prefWidth="229.0" promptText="Search" styleClass="search" />
+                                                <Button fx:id="insertGrade_btn" layoutX="11.0" layoutY="178.0" mnemonicParsing="false" onAction="#addGrade" prefHeight="31.0" prefWidth="233.0" text="Insert Grade">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <Button fx:id="updateGrade_btn" layoutX="11.0" layoutY="233.0" mnemonicParsing="false" onAction="#updateGrade" prefHeight="31.0" prefWidth="234.0" text="Update Grade">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane layoutX="22.0" layoutY="14.0" prefHeight="275.0" prefWidth="687.0">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <TableView fx:id="studentGrade_tableview" layoutX="16.0" layoutY="61.0" onMouseClicked="#selectGrade" prefHeight="200.0" prefWidth="655.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="studentGrade_studentID" prefWidth="125.0" text="Student ID" />
+                                                        <TableColumn fx:id="studentGrade_studentName" prefWidth="125.0" text="Student Name" />
+                                                        <TableColumn fx:id="studentGrade_courseID" prefWidth="125.0" text="Course ID" />
+                                                        <TableColumn fx:id="studentGrade_courseName" prefWidth="202.0" text="Course Name" />
+                                                        <TableColumn fx:id="studentGrade_grade" prefWidth="72.0" text="Grade" />
+                                                    </columns>
+                                                </TableView>
+                                                <TextField fx:id="studentGrade_search" layoutX="17.0" layoutY="14.0" prefHeight="30.0" prefWidth="248.0" promptText="Search" styleClass="search" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="departments_form" layoutX="153.0" layoutY="112.0" prefHeight="624.0" prefWidth="728.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="603.0" prefWidth="698.0">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <TableView fx:id="departments_tableview" layoutX="29.0" layoutY="126.0" onMouseClicked="#selectDepartment" prefHeight="146.0" prefWidth="640.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="departments_tableview_id" prefWidth="75.0" text="ID" />
+                                                        <TableColumn fx:id="departments_tableview_code" prefWidth="75.0" text="Code" />
+                                                        <TableColumn fx:id="departments_tableview_name" prefWidth="219.0" text="Name" />
+                                                        <TableColumn fx:id="departments_tableview_numStudents" prefWidth="103.0" text="# Of Students" />
+                                                        <TableColumn fx:id="departments_tableview_numCourses" prefWidth="164.0" text="# Of Courses" />
+                                                    </columns>
+                                                </TableView>
+                                                <TextField fx:id="departments_depId_tf" disable="true" layoutX="136.0" layoutY="22.0" prefHeight="20.0" prefWidth="150.0" />
+                                                <Label layoutX="26.0" layoutY="22.0" prefHeight="24.0" prefWidth="160.0" text="Department ID      :" />
+                                                <TextField fx:id="departments_depCode_tf" layoutX="136.0" layoutY="51.0" prefHeight="20.0" prefWidth="150.0" />
+                                                <Label layoutX="26.0" layoutY="55.0" text="Department Code :" />
+                                                <TextField fx:id="departments_depName_tf" layoutX="137.0" layoutY="83.0" prefHeight="20.0" prefWidth="150.0" />
+                                                <Label layoutX="25.0" layoutY="87.0" text="Department Name :" />
+                                                <Button fx:id="addDep_btn" layoutX="307.0" layoutY="28.0" mnemonicParsing="false" onAction="#addDepartment" prefHeight="31.0" prefWidth="186.0" text="Add Department">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <Button fx:id="updateDep_btn" layoutX="308.0" layoutY="68.0" mnemonicParsing="false" onAction="#updateDepartment" prefHeight="31.0" prefWidth="186.0" text="Update Department">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <Button fx:id="clearDep_btn" layoutX="511.0" layoutY="29.0" mnemonicParsing="false" onAction="#clearDepartmentSelection" prefHeight="69.0" prefWidth="150.0" text="Clear">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="logout" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                </Button>
+                                                <TableView fx:id="departments_courses_tableview" layoutX="29.0" layoutY="280.0" prefHeight="136.0" prefWidth="640.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="departments_courses_tableview_id" prefWidth="75.0" text="ID" />
+                                                        <TableColumn fx:id="departments_courses_tableview_code" prefWidth="75.0" text="Code" />
+                                                        <TableColumn fx:id="departments_courses_tableview_name" prefWidth="219.0" text="Name" />
+                                                        <TableColumn fx:id="departments_courses_tableview_avgGpa" prefWidth="134.0" text="Average GPA" />
+                                                        <TableColumn fx:id="departments_courses_tableview_numStudents" prefWidth="133.0" text="# Of Students" />
+                                                    </columns>
+                                                </TableView>
+                                    <TableView fx:id="department_students_tableview" layoutX="29.0" layoutY="424.0" prefHeight="171.0" prefWidth="315.0">
+                                      <columns>
+                                        <TableColumn fx:id="department_students_sid" prefWidth="112.0" text="Student ID" />
+                                        <TableColumn fx:id="department_students_sname" prefWidth="201.0" text="Student Name" />
+                                      </columns>
+                                    </TableView>
+                                    <TableView fx:id="department_courses_tableview" layoutX="354.0" layoutY="424.0" prefHeight="171.0" prefWidth="313.0">
+                                       <columns>
+                                          <TableColumn fx:id="department_courses_cid" prefWidth="75.0" text="Course ID" />
+                                          <TableColumn fx:id="department_courses_cname" prefWidth="153.0" text="Course Name" />
+                                          <TableColumn fx:id="department_courses_ccode" prefWidth="82.0" text="Course Code" />
+                                       </columns>
+                                    </TableView>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="assignCourses_form" layoutX="10.0" layoutY="10.0" prefHeight="624.0" prefWidth="728.0" visible="false">
+                                    <children>
+                                        <AnchorPane layoutX="4.0" layoutY="10.0" prefHeight="594.0" prefWidth="704.0">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="281.0" prefWidth="676.0">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <TextField fx:id="studentSearch_tf1" layoutX="24.0" layoutY="7.0" prefHeight="30.0" promptText="Search" styleClass="search" />
+                                                        <TableView fx:id="ac_students_tableview" layoutX="14.0" layoutY="44.0" onMouseClicked="#selectStudentAvalableCourses" prefHeight="226.0" prefWidth="648.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="ac_students_tableview_id" prefWidth="41.0" text="ID" />
+                                                                <TableColumn fx:id="ac_students_tableview_fname" prefWidth="82.0" text="First Name" />
+                                                                <TableColumn fx:id="ac_students_tableview_lname" text="Last Name" />
+                                                                <TableColumn fx:id="ac_students_tableview_email" prefWidth="145.0" text="Email" />
+                                                                <TableColumn fx:id="ac_students_tableview_gender" prefWidth="74.0" text="Gender" />
+                                                                <TableColumn fx:id="ac_students_tableview_dob" prefWidth="92.0" text="Date Of Birth" />
+                                                                <TableColumn fx:id="ac_students_tableview_depId" prefWidth="133.0" text="Department" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                    <cursor>
+                                                        <Cursor fx:constant="DEFAULT" />
+                                                    </cursor>
+                                                </AnchorPane>
+                                                <TableView fx:id="studentAvailableCourses_tableview" layoutX="307.0" layoutY="312.0" onMouseClicked="#selectCourseToAssign" prefHeight="251.0" prefWidth="383.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="studentAvailableCourses_CourseID" prefWidth="91.0" text="Course ID" />
+                                                        <TableColumn fx:id="studentAvailableCourses_courseName" prefWidth="288.0" text="Course Name" />
+                                                    </columns>
+                                                </TableView>
+                                                <Label layoutX="31.0" layoutY="387.0" text="Student ID :">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="studentAvailableCorses_sid_tf" layoutX="137.0" layoutY="385.0" prefHeight="30.0" prefWidth="150.0" />
+                                                <Label layoutX="35.0" layoutY="429.0" text="Course ID :">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="studentAvailableCorses_cid_tf" layoutX="137.0" layoutY="427.0" prefHeight="30.0" prefWidth="150.0" />
+                                                <Button fx:id="assignCourse_btn" layoutX="70.0" layoutY="524.0" mnemonicParsing="false" onAction="#assignCourse" prefHeight="39.0" prefWidth="177.0" styleClass="logout" text="Assign Course">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </center>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="UniversityDM.jnlp">
+  <information>
+    <title>UniversityDM</title>
+    <vendor>ahmed</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="UniversityDM.jar" size="39306" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\jfreechart-1.0.19.jar" size="1565065" download="eager" />
+    <jar href="lib\mysql-connector-j-8.2.0.jar" size="2489850" download="eager" />
+    <jar href="lib\ojdbc14-1.0.jar" size="1352918" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="UniversityDM" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="universitydm.UniversityDM"  name="UniversityDM" />
+  <update check="always"/>
+</jnlp>
